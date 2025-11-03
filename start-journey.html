@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Your Journey - Learning Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/cute-style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar container">
+            <div class="logo">
+                <h1>Learning Journey</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="start-journey.html" class="active">Start Journey</a></li>
+                <li><a href="explore-journeys.html">Explore</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn" onclick="window.location.href='auth.html'">Login / Register</button>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Journey Creation Section -->
+    <section class="hero" style="padding-bottom: 2rem;">
+        <div class="container">
+            <h2>Start Your Learning Journey</h2>
+            <p>Document your growth, share your challenges, and inspire others on their learning path.</p>
+        </div>
+    </section>
+
+    <section class="container journey-form">
+        <div class="card">
+            <h3>Create Your Journey</h3>
+            <form id="journeyForm">
+                <div class="form-group">
+                    <label for="journeyTitle">Journey Title</label>
+                    <input type="text" id="journeyTitle" placeholder="e.g. 'Learning Python from Scratch'" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="journeyCategory">Category</label>
+                    <select id="journeyCategory" required>
+                        <option value="">Select a category</option>
+                        <option value="programming">Programming & Technology</option>
+                        <option value="language">Language Learning</option>
+                        <option value="music">Music & Arts</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="journeyDescription">Description</label>
+                    <textarea id="journeyDescription" rows="4" placeholder="What are you planning to learn? What are your goals?" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="journeyMedia">Add Media (Optional)</label>
+                    <input type="file" id="journeyMedia" accept="image/*,video/*,audio/*">
+                    <p class="small-text">Upload images, videos, or audio files to document your journey</p>
+                </div>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="isPublic" checked>
+                        Make this journey public (visible to everyone)
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Create Journey</button>
+            </form>
+        </div>
+        
+        <div class="journey-tips">
+            <h3>Journey Tips</h3>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Be consistent with your updates</li>
+                <li><i class="fas fa-check-circle"></i> Share both successes and challenges</li>
+                <li><i class="fas fa-check-circle"></i> Include specific resources that helped you</li>
+                <li><i class="fas fa-check-circle"></i> Use multimedia to make your journey more engaging</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Learning Journey</h3>
+                    <p>Document growth, inspire others</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="start-journey.html">Start Journey</a></li>
+                        <li><a href="explore-journeys.html">Explore</a></li>
+                        <li><a href="auth.html">Login / Register</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Learning Journey. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const navActions = document.querySelector('.nav-actions');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = navLinks.style.display === 'flex';
+            navLinks.style.display = isOpen ? 'none' : 'flex';
+            navActions.style.display = isOpen ? 'none' : 'flex';
+        });
+        
+        // Form submission handling
+        document.getElementById('journeyForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Journey created successfully! This would save your journey in a real application.');
+        });
+    </script>
+</body>
+</html>
